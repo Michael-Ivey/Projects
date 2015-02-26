@@ -221,7 +221,7 @@ public class MyInteger {
 		MyInteger.isPrime(47);
 		
 		//int value1 = MyInteger.getValue();
-		
+			
 		MyInteger x = new MyInteger((int) 47);
 		int y = x.getValue();
 		
