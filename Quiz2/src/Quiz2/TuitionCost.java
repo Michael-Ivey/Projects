@@ -6,6 +6,8 @@ public class TuitionCost {
 
 	public static void main(String[] args) {
 		
+		
+		
 		Scanner input = new Scanner(System.in);
 		System.out.println("Enter Tuition Amount:");
 		double tuition = input.nextDouble();
