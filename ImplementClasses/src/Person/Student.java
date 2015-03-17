@@ -1,5 +1,5 @@
 package Person;
-//Michael Ivey
+//Michael Ivey//
 
 public class Student extends Person {
 	private final String CLASSSTATUS = "freshmen";
