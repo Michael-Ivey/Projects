@@ -136,7 +136,7 @@ public class Main extends Application {
 
 				boolean flag = validateInput(FirstNameFld.getText().length(), LastNameFld.getText().length() 
 						, MiddleNameFld.getText().length(), AddressFld.getText().length(),ZipFld.getText().length(), maleBtn.isSelected(), 
-						femaleBtn.isSelected(), stateBox.getSelectedIndex());
+						femaleBtn.isSelected(), stateBox.getSelectedIndex(), ZipFld.getText());
 				if (maleBtn.isSelected() && true){
 					gender = "M";
 					setGender(gender);
@@ -228,17 +228,36 @@ public class Main extends Application {
 
 		
 		}
+	
+	public static boolean isNumeric(String zip)  
+	{  
+	  try  
+	  {  
+	    int d = Integer.parseInt(zip);  
+	  }  
+	  catch(NumberFormatException nfe)  
+	  {  
+	    return false;  
+	  }  
+	  return true;  
+	}
 
 
-	protected boolean validateInput(int Fname, int Lname, int Mname, int Add, int zip, boolean male, boolean female, int state) {
+	protected boolean validateInput(int Fname, int Lname, int Mname, int Add, int zip, boolean male, boolean female, int state, String zipInt) {
 		// TODO Auto-generated method stub
-		int value = Integer.valueOf(zip);
 		
 		
-
+		
+		boolean value = isNumeric(zipInt);
+        
+		
+		
+		
+		
+		 
 
 		if ((Fname <= 50) && (Lname <= 50) && (Mname <= 1) && (Add <= 50) && ((zip == 5) || (zip == 9)) && (male || female) &&
-				(state > 0))  {
+				(state > 0) && (value && true))  {
 			JOptionPane.showMessageDialog(Messages,"Successful Save");
 			return true;
 					
