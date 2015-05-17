@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="anchor" minHeight="300.0" onMouseClicked="#mortgageFinanced" onMouseDragged="#mortgageFinanced" onMouseEntered="#maxPay" onMouseExited="#mortgageFinanced" onMouseMoved="#calcHousingObligation" onMousePressed="#mortgageFinanced" onMouseReleased="#mortgageFinanced" prefWidth="500.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controler">
+   <children>
+      <TextField fx:id="totalGrossIncomeBox" layoutX="9.0" layoutY="46.0" onAction="#totalGrossIncomeToInt" onMouseClicked="#totalGrossIncomeToInt" onMouseDragExited="#calcHousingPayment" onMouseDragged="#calcHousingPayment" onMouseEntered="#mortgageFinanced" onMouseExited="#totalGrossIncomeToInt" onMouseMoved="#calcHousingPayment" onMousePressed="#calcHousingPayment" onMouseReleased="#calcHousingPayment" />
+      <Label fx:id="totalGrossIncomeLbl" layoutX="48.0" layoutY="23.0" text="Gross Income" />
+      <Label fx:id="totalMonthlyDebtLbl" layoutX="207.0" layoutY="23.0" text="Monthly Debt" />
+      <TextField fx:id="totalMonthlyDebtBox" layoutX="169.0" layoutY="46.0" onAction="#totalMonthlyDebtToInt" onMouseClicked="#calcHousingPayment" onMouseDragReleased="#maxPay" onMouseEntered="#calcHousingPayment" onMouseExited="#totalMonthlyDebtToInt" onMouseMoved="#calcHousingPayment" onMousePressed="#calcHousingPayment" />
+      <TextField fx:id="downPaymentBox" layoutX="337.0" layoutY="46.0" onAction="#downPaymentToInt" onMouseClicked="#mortgageFinanced" onMouseDragEntered="#mortgageFinanced" onMouseDragExited="#mortgageFinanced" onMouseDragOver="#mortgageFinanced" onMouseDragged="#mortgageFinanced" onMouseEntered="#calcHousingObligation" onMouseExited="#downPaymentToInt" onMouseMoved="#mortgageFinanced" onMousePressed="#maxPay" onMouseReleased="#mortgageFinanced" text="0" />
+      <Label fx:id="downPaymentLbl" layoutX="371.0" layoutY="23.0" text="Down Payment" />
+      <Label fx:id="termLbl" layoutX="51.0" layoutY="89.0" text="Term (in years)" />
+      <ComboBox fx:id="termBox" layoutX="16.0" layoutY="114.0" onMouseClicked="#mortgageFinanced" onMouseDragged="#mortgageFinanced" onMouseEntered="#maxPay" onMouseExited="#mortgageFinanced" onMouseMoved="#calcHousingPayment" onMousePressed="#maxPay" onMouseReleased="#mortgageFinanced" prefWidth="150.0" />
+      <Label fx:id="outputLbl" layoutX="30.0" layoutY="158.0" text="Housing Payment Only" />
+      <ComboBox fx:id="outputBox" layoutX="10.0" layoutY="189.0" prefWidth="150.0" />
+      <ComboBox fx:id="obligationBox" layoutX="206.0" layoutY="189.0" prefWidth="150.0" />
+      <Label fx:id="obligationLbl" layoutX="196.0" layoutY="158.0" text="Housing Payment + Obligations" />
+      <Label fx:id="maxPayLbl" layoutX="67.0" layoutY="232.0" text="Max Pay " />
+      <ComboBox fx:id="maxPayBox" layoutX="16.0" layoutY="255.0" prefWidth="150.0" />
+      <ComboBox fx:id="mortgageBox" layoutX="206.0" layoutY="255.0" prefWidth="150.0" />
+      <Label fx:id="mortgageLbl" layoutX="225.0" layoutY="232.0" text="Amount of Mortgage" />
+   </children>
+</AnchorPane>
