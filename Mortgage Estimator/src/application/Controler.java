@@ -10,7 +10,7 @@ import javafx.scene.layout.AnchorPane;
 
 public class Controler {
 	
-	private Integer downPayment;
+	private float downPayment;
 	private Integer totalMonthlyDebt;
 	private Integer totalGrossIncome;
 	private float housingPayment;
@@ -67,6 +67,17 @@ public class Controler {
 	@FXML
 	private Label mortgageLbl;	
 	
+	@FXML
+	private Button updateBtn;
+	
+	@FXML
+	private void update(){
+		calcHousingPayment();
+		calcHousingObligation();
+		maxPay();
+		mortgageFinanced();
+	}
+	
 	
 	@FXML
     private void initialize() {
@@ -75,10 +86,18 @@ public class Controler {
 	}
 	
 	@FXML
-	private void downPaymentToInt(){
+	private void downPaymentToFloat(){
 		String text = downPaymentBox.getText();
-		Integer downPayment = Integer.parseInt(text);
-		setDownPayment(downPayment);
+		boolean value = isNumeric(text);
+		if (value == true){
+			float downPayment = Float.parseFloat(text);
+			setDownPayment(downPayment);			
+		}
+		else
+			if(value == false){
+				downPaymentBox.clear();
+			}
+		
 		
 		
 	}
@@ -86,8 +105,15 @@ public class Controler {
 	@FXML
 	private void totalMonthlyDebtToInt(){
 		String text = totalMonthlyDebtBox.getText();
-		Integer totalMonthlyDebt = Integer.parseInt(text);
-		setTotalMonthlyDebt(totalMonthlyDebt);
+		boolean value = isNumeric(text);
+		if (value == true){
+			Integer totalMonthlyDebt = Integer.parseInt(text);
+			setTotalMonthlyDebt(totalMonthlyDebt);
+		}
+		else
+			if (value == false){
+				totalMonthlyDebtBox.clear();
+			}
 		
 	}
 	
@@ -95,18 +121,26 @@ public class Controler {
 	private void totalGrossIncomeToInt(){
 		String text = totalGrossIncomeBox.getText();
 		//System.out.println(text);
-		Integer totalGrossIncome = Integer.parseInt(text);
-		setTotalGrossIncome(totalGrossIncome);
+		boolean value = isNumeric(text);
+		if (value == true){
+			Integer totalGrossIncome = Integer.parseInt(text);
+			setTotalGrossIncome(totalGrossIncome);			
+		}
+		else
+			if (value == false){
+				totalGrossIncomeBox.clear();
+			}
+		
 		
 	}
 	
 	
 
-	public Integer getDownPayment() {
+	public float getDownPayment() {
 		return downPayment;
 	}
 
-	public void setDownPayment(Integer downPayment) {
+	public void setDownPayment(float downPayment) {
 		this.downPayment = downPayment;
 	}
 
@@ -241,6 +275,15 @@ public class Controler {
 		this.housingPayment = housingPayment;
 	}
 	
+	public static boolean isNumeric(String str)
+	{
+	    for (char c : str.toCharArray())
+	    {
+	        if (!Character.isDigit(c)) 
+	        	return false;
+	    }
+	    return true;
+	}
 	
 	
 	
