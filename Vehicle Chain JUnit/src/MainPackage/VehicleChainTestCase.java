@@ -8,6 +8,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class VehicleChainTestCase {
+	
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -31,7 +32,7 @@ public class VehicleChainTestCase {
 		String lastName = "Turner";
 		assertEquals("test", "test");
 		assertNotEquals("test", "homework");
-		Person k = new Person("Mark", "Turner");
+		
 		
 		
 		
