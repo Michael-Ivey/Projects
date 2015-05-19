@@ -25,11 +25,11 @@ public class Truck extends Vehicle implements Interface {
 		return false;
 	}
 
-//	@Override
-//	public Person transferOwnership() {
-//		// TODO Auto-generated method stub
-//		return this.Owner;
-//	}
+	@Override
+	public Person transferOwnership() {
+		// TODO Auto-generated method stub
+		return this.Owner;
+	}
 
 	
 	
